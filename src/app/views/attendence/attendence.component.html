@@ -1,0 +1,152 @@
+<!-- Material form register -->
+<mdb-card>
+
+  <mdb-card-header class="info-color white-text text-center py-4">
+    <h5>
+      <strong>Attendence</strong>
+    </h5>
+  </mdb-card-header>
+
+  <!--Card content-->
+  <mdb-card-body class="px-lg-5 pt-0">
+
+    <!-- Form -->
+    <form class="text-center" style="color: #757575;">
+
+      <div class="form-row">
+        <div class="col-6">
+          <!-- Shift name -->
+          <div class="md-form">
+            <select id="materialRegisterFormLastName" class="browser-default custom-select" mdbInputDirective>
+              <option selected>Select Shift</option>
+              <option *ngFor="let item of Shift" [value]="item.value">
+                {{item.viewValue}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-6">
+          <!-- Version name -->
+          <div class="md-form">
+            <select id="materialRegisterFormLastName" class="browser-default custom-select" mdbInputDirective>
+              <option selected>Select Version</option>
+              <option *ngFor="let item of Version" [value]="item.value">
+                {{item.viewValue}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-6">
+          <!-- Class name -->
+          <div class="md-form">
+            <select id="materialRegisterFormLastName" class="browser-default custom-select" mdbInputDirective>
+              <option selected>Select Class</option>
+              <option *ngFor="let item of Class" [value]="item.value">
+                {{item.viewValue}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-6">
+          <!-- Section name -->
+          <div class="md-form">
+            <select id="materialRegisterFormLastName" class="browser-default custom-select" mdbInputDirective>
+              <option selected>Select Section</option>
+              <option *ngFor="let item of Section" [value]="item.value">
+                {{item.viewValue}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <!-- Date -->
+          <div class="md-form">
+            <input type="date" placeholder="Date" class="form-control" bsDatepicker>
+
+          </div>
+        </div>
+        <div class="col">
+          <!-- Section name -->
+          <div class="md-form">
+            <select id="materialRegisterFormLastName" class="browser-default custom-select" mdbInputDirective>
+              <option selected>Select Academic Year</option>
+              <option *ngFor="let item of AcademicYear" [value]="item.value">
+                {{item.viewValue}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- Sign up button -->
+      <button mdbBtn color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0"
+        mdbWavesEffect type="submit">Create Attendence</button>
+
+
+
+    </form>
+    <!-- Form -->
+
+  </mdb-card-body>
+
+</mdb-card>
+<!-- Material form register -->
+
+
+<div class="row mt-5">
+  <div class="col-md-12">
+    <!--Card-->
+    <div class="card card-cascade narrower mt-5">
+      <!--Card image-->
+      <div class="view gradient-card-header blue darken-2">
+        <h4 class="h4-responsive text-white">Attendence</h4>
+      </div>
+      <!--/Card image-->
+      <!--Card content-->
+      <div class="card-body">
+
+        <!--Table-->
+        <table class="table">
+
+          <!--Table head-->
+          <thead class="blue-grey lighten-4">
+            <tr>
+              <th><input type="checkbox" (change)="selectAll()" [checked]="selectedAll">
+
+                Select All
+              </th>
+              <th>Roll</th>
+              <th>Name</th>
+
+            </tr>
+          </thead>
+          <!--Table head-->
+
+          <!--Table body-->
+          <tbody>
+            <tr *ngFor="let n of names">
+              <td><input type="checkbox" value="{{n.name}}" [(ngModel)]="n.selected" (change)="checkIfAllSelected()"></td>
+              <td>{{n.roll}}</td>
+              <td>{{n.name}}</td>
+            </tr>
+
+          </tbody>
+          <!--Table body-->
+        </table>
+        <!--Table-->
+  <!-- Sign up button -->
+  <button mdbBtn color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0"
+  mdbWavesEffect type="submit">Create Absent</button>
+      </div>
+      <!--/.Card content-->
+    </div>
+    <!--/.Card-->
+  </div>
+</div>
